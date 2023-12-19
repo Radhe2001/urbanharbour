@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-cyan-100">
+    <center>
+      <h1 class="pt-40 text-5xl font-bold text-slate-700 py-12">About Us</h1>
+    </center>
+
+    {% comment %} div 1 {% endcomment %}
+
+    <div class="flex " style="justify-content: center;">
+      <div
+        class="bg-blue-200 rounded-3xl px-20 mx-10"
+        style="width: 800px; height: 470px;box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;" >
+        <div>
+          <center>
+            <h1 class="text-4xl font-semibold py-10">
+              Introduction to UrbonHarbour
+            </h1>
+          </center>
+        </div>
+        <div style="text-align: justify">
+          <p class="text-2xl">
+            UrbonHarbour stands at the forefront of the digital era, offering an
+            expansive e-commerce platform that caters to the tech-savvy
+            consumer's needs. Specializing in smartwatches, speakers, earphones,
+            and an array of electronic gadgets, our platform is a haven for
+            those seeking the latest in cutting-edge technology. In a world
+            where innovation is the heartbeat of progress, UrbonHarbour ensures
+            its customers are not just consumers but active participants in the
+            evolution of technology.
+          </p>
+        </div>
+      </div>
+      <div>
+        <img
+          class="h-5/6 w-5/6 rounded-3xl" style="box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;"
+          src="{% static 'pictures/shop.png' %}"
+        />
+      </div>
+    </div>
+
+    {% comment %} div2 {% endcomment %}
+    <div class="flex" style="justify-content: center">
+      <div>
+        <img
+          class="h-5/6 w-5/6 rounded-3xl"
+          style="box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;"
+          src="{% static 'pictures/catalogue.png' %}"/>
+      </div>
+      <div
+        class="bg-blue-200 rounded-3xl px-20 mx-10"
+        style="width: 800px; height: 470px;box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;margin-left:-50px;"
+      >
+        <div>
+          <center>
+            <h1 class="text-4xl font-semibold py-10">
+              Diverse Product Catalogue
+            </h1>
+          </center>
+        </div>
+        <div style="text-align: justify">
+          <p class="text-2xl">
+            At the heart of SmartGadgets Hub lies a meticulously curated product
+            catalog designed to meet the diverse needs of our customers. From
+            smartwatches that seamlessly integrate into your daily life to
+            speakers that redefine audio experiences, and earphones that provide
+            unparalleled sound quality, our range of electronic gadgets is
+            unparalleled. Beyond the mainstream offerings, our catalog extends
+            to include an array of electronic accessories and unique tech
+            gadgets, promising something for every gadget enthusiast.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% comment %} div3 {% endcomment %}
+    <div class="flex" style="justify-content: center">
+      <div
+        class="bg-blue-200 rounded-3xl px-20 mx-10"
+        style="width: 800px; height: 470px;box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;"
+      >
+        <div>
+          <center>
+            <h1 class="text-4xl font-semibold py-10">
+              Commitment to Sustainability
+            </h1>
+          </center>
+        </div>
+        <div style="text-align: justify">
+          <p class="text-2xl">
+            SmartGadgets Hub is not merely a marketplace; it's a commitment to a
+            sustainable and eco-friendly future. Our Gadget Recycling Program
+            encourages customers to trade in their old devices, providing
+            discounts on new purchases while contributing to the reduction of
+            electronic waste. This initiative not only aligns with our
+            environmental responsibility but also fosters a sense of social
+            consciousness among our customers, making every transaction a step
+            toward a greener world.
+          </p>
+        </div>
+      </div>
+      <div>
+        <img
+          class="h-5/6 w-5/6 rounded-3xl"  style="box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;" 
+          src="{% static 'pictures/sustain.png' %}"/>
+      </div>
+    </div>
+
+    {% comment %} div4 {% endcomment %}
+    <div class="flex" style="justify-content: center">
+      <div>
+        <img
+          class="h-5/6 w-5/6 rounded-3xl" style="box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;" 
+          src="{% static 'pictures/empower.png' %}"/>
+      </div>
+      <div
+        class="bg-blue-200 rounded-3xl px-20 mx-10"
+        style="width: 800px; height: 490px;box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;margin-left:-50px;"
+      >
+        <div>
+          <center>
+            <h1 class="text-4xl font-semibold py-10">
+              Empowering Local Sellers
+            </h1>
+          </center>
+        </div>
+        <div style="text-align: justify">
+          <p class="text-2xl">
+            Central to our ethos is the belief in supporting local businesses.
+            SmartGadgets Hub provides a platform for local sellers to showcase
+            and sell their electronic gadgets, fostering entrepreneurship and
+            diversity within our marketplace. This not only expands our product
+            range but also ensures that customers have access to unique, locally
+            crafted tech solutions. Through this initiative, SmartGadgets Hub
+            becomes a catalyst for local economic growth, transforming our
+            platform into a dynamic marketplace that reflects the vibrancy of
+            the communities it serves.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% comment %} div5 {% endcomment %}
+    <div class="flex" style="justify-content: center">
+      <div
+        class="bg-blue-200 rounded-3xl px-20 mx-10"
+        style="width: 800px; height: 470px;box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;"
+      >
+        <div>
+          <center>
+            <h1 class="text-4xl font-semibold py-10">
+              Comprehensive Post-Sale Services
+            </h1>
+          </center>
+        </div>
+        <div style="text-align: justify">
+          <p class="text-2xl">
+            The commitment to customer satisfaction doesn't end with a purchase
+            at SmartGadgets Hub. Our post-sale services set us apart. Whether
+            it's warranty support, troubleshooting assistance, or regular
+            software updates, we strive to ensure that every gadget purchased
+            from our platform continues to deliver optimal performance. Our
+            dedication to the customer journey extends beyond the transaction,
+            creating a lasting relationship with our users.
+          </p>
+        </div>
+      </div>
+      <div>
+        <img
+          class="h-5/6 w-5/6 rounded-3xl" style="box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;" 
+          src="{% static 'pictures/post_sales.png' %}"/>
+      </div>
+    </div>
+
+    {% comment %} div6 {% endcomment %}
+    <div class="flex mb-20" style="justify-content: center">
+      <div>
+        <img
+          class="h-6/6 w-5/6 rounded-3xl" style="box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;" 
+          src="{% static 'pictures/shipping.png' %}"/>
+      </div>
+      <div
+        class="bg-blue-200 rounded-3xl px-20 "
+        style="width: 800px; height: 560px;box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;margin-left:-50px;"
+      >
+        <div>
+          <center>
+            <h1 class="text-4xl font-semibold py-10">
+              Shipping Excellence and Collaborative Partnerships
+            </h1>
+          </center>
+        </div>
+        <div style="text-align: justify">
+          <p class="text-2xl">
+            Efficient and reliable shipping is paramount at SmartGadgets Hub. We
+            have forged strategic partnerships with reputable shipping
+            companies, ensuring that our customers receive their orders securely
+            and promptly. Moreover, SmartGadgets Hub actively seeks
+            collaborations and partnerships with technology brands, local
+            sellers, and shipping entities to foster innovation and create a
+            robust ecosystem for electronic gadgets. Through collaborative
+            growth, we aim to continually enhance our offerings, creating a
+            dynamic marketplace that anticipates and meets the evolving needs of
+            our tech-savvy audience.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <script>
+      document.querySelector(".about").style.color = "blue";
+    </script>
+  </body>
+</html>
+
+{% endblock %}

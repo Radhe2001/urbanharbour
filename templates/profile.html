@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="myapp/static/css/style.css" />
+  </head>
+  <body>
+    {% block content %}
+    <div
+      class="pt-32 pb-24 bg-gradient-to-b from-violet-900 to-slate-900 via-cyan-900"
+      style="height: 1050px"
+    >
+      <center>
+        <div
+          class="mt-28 mb-8"
+          style="
+            height: 700px;
+            width: 800px;
+            background: linear-gradient(
+              135deg,
+              rgba(255, 255, 255, 0.1),
+              rgba(255, 255, 255, 0)
+            );
+            backdrop-filter: blur(10px);
+            -wbkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+          "
+        >
+          <div class="flex items-center place-content-center p-8">
+            <div
+              style="
+              border-radius: 50%;
+              background-color: #f0f0f0;
+              padding: 20px;
+              height:150px;width:150px;
+              background-image: url('{{ obj.profile_pic.url }}');
+              background-size: cover;
+              background-position: center;
+            "
+            ></div>
+            <div class="pl-12 items-start text-left">
+              <h1 class="text-5xl font-bold mb-4 text-cyan-400">
+                {{ obj.name }}
+              </h1>
+              <h3 class="text-2xl mb-4 italic text-cyan-600">
+                {{ obj.email }}
+              </h3>
+            </div>
+          </div>
+          <center>
+          <div style="width:700px;">
+            <div class="flex pt-2">
+              <h1 class="text-2xl text-cyan-400 pl-2 w-44 text-start">Local address  : <h1>
+              <h2 class="text-xl italic italic text-cyan-600 pl-2">{{ obj.local_address }}<h2>
+            </div> 
+            <div class="flex pt-2">
+              <h1 class="text-2xl text-cyan-400 pl-2 w-44 text-start">Town  : <h1>
+              <h2 class="text-xl italic italic text-cyan-600 pl-2">{{ obj.town }}<h2>
+            </div>
+            <div class="flex pt-2">
+              <h1 class="text-2xl text-cyan-400 pl-2 w-44 text-start">District  : <h1>
+              <h2 class="text-xl italic italic text-cyan-600 pl-2">{{ obj.dist }}<h2>
+            </div>
+            <div class="flex pt-2">
+              <h1 class="text-2xl text-cyan-400 pl-2 w-44 text-start">State  : <h1>
+              <h2 class="text-xl italic italic text-cyan-600 pl-2">{{ obj.state }}<h2>
+            </div>
+            <div class="flex pt-2">
+              <h1 class="text-2xl text-cyan-400 pl-2 w-44 text-start">Country  : <h1>
+              <h2 class="text-xl italic italic text-cyan-600 pl-2">{{ obj.country }}<h2>
+            </div>
+            <div class="flex pt-2">
+              <h1 class="text-2xl text-cyan-400 pl-2 w-44 text-start">ZIP Code  : <h1>
+              <h2 class="text-xl italic italic text-cyan-600 pl-2">{{ obj.zip }}<h2>
+            </div>
+            <div class="flex pt-2">
+              <h1 class="text-2xl text-cyan-400 pl-2 w-44 text-start">Contact No.  : <h1>
+              <h2 class="text-xl italic italic text-cyan-600 pl-2">{{ obj.phone }}<h2>
+            </div>
+            <div class="flex pt-2">
+              <h1 class="text-2xl text-cyan-400 pl-2 w-44 text-start">Date of Birth  : <h1>
+              <h2 class="text-xl italic italic text-cyan-600 pl-2">{{ obj.dob }}<h2>
+            </div>
+            <div class="mt-20">
+              <a class="border-4 bg-slate-600 border-gray-950 p-2 mr-10 font-semibold text-2xl rounded-xl hover:bg-cyan-400 hover:text-slate-900 hover:border-blue-950" href="#">Order Details</a>
+              <a class="border-4 bg-slate-600 border-gray-950 ml-10 p-2 font-semibold text-2xl rounded-xl hover:bg-cyan-400 hover:text-slate-900 hover:border-blue-950" href="{% url 'login' %}">Logout</a>
+            </div>
+          </div>
+        </center>
+        </div>
+      </center>
+    </div>
+
+    {% endblock %}
+    <script>
+      {% comment %} console.log(obj) {% endcomment %}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+{% extends 'base.html' %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+  </head>
+  <body>
+    {% block content %}
+    <div
+      class="pt-32 pb-32 bg-gradient-to-b from-violet-900 to-slate-900 via-cyan-900"
+    >
+      <center>
+        <div
+          class="mt-28 "
+          style="
+            height: 830px;
+            width: 1300px;
+            background: linear-gradient(
+              135deg,
+              rgba(255, 255, 255, 0.1),
+              rgba(255, 255, 255, 0)
+            );
+            backdrop-filter: blur(10px);
+            -wbkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+          "
+        >
+          <h1 class="text-white text-5xl font-bold m-16">User Registration</h1>
+          <form method="post" enctype="multipart/form-data" action="{% url 'register' %}">
+            {% csrf_token %}
+            <input
+              type="text"
+              class="p-3 text-2xl mt-6 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="name"
+              placeholder="Your Name"
+            />
+            <input
+              type="text"
+              class="p-3 text-2xl mt-6 ml-2 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="email"
+              placeholder="Your Email Address"
+            />
+            <input
+              type="text"
+              class="p-3 text-2xl mt-4 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="phone"
+              placeholder="Your Phone"
+            />
+            <input
+              type="text"
+              class="p-3 text-2xl mt-4 ml-2 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="password"
+              placeholder="Your Password"
+            />
+            <input
+              type="text"
+              class="p-3 text-2xl mt-4 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="local_address"
+              placeholder="Your Street/Ward/Village"
+            />
+            <input
+              type="text"
+              class="p-3 text-2xl mt-4 ml-2 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="town"
+              placeholder="Your Town"
+            />
+            <input
+              type="text"
+              class="p-3 text-2xl mt-4 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="dist"
+              placeholder="Your District"
+            />
+            <input
+              type="text"
+              class="p-3 text-2xl mt-4 ml-2 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="state"
+              placeholder="Your State"
+            />
+            <input
+              type="text"
+              class="p-3 text-2xl mt-4 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="country"
+              placeholder="Your Country"
+            />
+            <input
+              type="number"
+              class="p-3 text-2xl mt-4 ml-2 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="zip"
+              placeholder="ZIP Code"
+            />
+            <input
+              type="date"
+              class="p-3 text-2xl mt-4 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="dob"
+              placeholder="Date of Birth"
+            />
+            <input
+              type="file"
+              class="p-3 text-2xl mt-4 ml-2 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="profile_pic"
+            /><br />
+            <input
+              type="submit"
+              class="p-3 text-2xl bg-cyan-800 hover:bg-gray-700 m-6 mt-12 text-white border-2 font-bold text-3xl rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              value="Register"
+            />
+          </form>
+        </div>
+      </center>
+    </div>
+
+    {% endblock %}
+    <script src="index.js"></script>
+  </body>
+</html>

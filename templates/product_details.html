@@ -1,0 +1,95 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-cyan-100">
+    <div class="pt-32">
+      <div class="flex place-content-center py-12">
+        <div
+          class="rounded-3xl mr-12 my-4"
+          style="box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;
+                background-color: #f0f0f0;
+                padding: 20px;
+                height:650px;width:700px;
+                background-image: url('{{ detail.product_pic.url }}');
+                background-size: cover;
+                background-position: center;
+              "
+        ></div>
+        <div
+          class="rounded-3xl ml-4 my-4 p-8"
+          style="
+            box-shadow: 10px 10px 8px 10px #fba1b7, inset 3px 3px 3px #fba1b7;
+            background-color: #f0f0f0;
+            height: 650px;
+            width: 900px;
+          "
+        >
+          <div class="text-4xl font-bold pb-4">
+            <h1>{{ detail.name }}</h1>
+          </div>
+          <div class="text-3xl pb-4">
+            <h1>{{ detail.description }}</h1>
+          </div>
+          <div class="text-2xl pb-4">
+            <h1>Brand : {{ detail.brand }}</h1>
+          </div>
+          <div class="flex text-2xl">
+            <h1>Price :</h1>
+            <h1 class="text-slate-400 pl-2 pr-1">&#x20b9;</h1>
+            <h1
+              class="text-slate-400 pr-2"
+              style="text-decoration: line-through"
+            >
+              {{ detail.original_price }}
+            </h1>
+            <h1 class="pl-4 pr-1">&#x20b9;</h1>
+            <h1 class="font-semibold">{{ detail.discounted_price }}</h1>
+          </div>
+
+          <div class="flex mb-24">
+            <div class="h-36 w-48 p-4 mt-4 text-xl mx-8">
+              <img class="h-24 w-36" src="{% static 'pictures/warranty.png' %}" />
+              <center class="pt-2"><h1>{{ detail.warranty }} Years Warranty</h1></center>
+            </div>
+            <div class="h-36 w-48 p-4 mt-4 text-xl mx-8">
+              <img class="h-24 w-36" src="{% static 'pictures/replacement.png' %}" />
+              <center><h1 class="pt-2">{{ detail.replacement_time }} days Service Centre Replacement</h1></center>
+            </div>
+            <div class="h-36 w-48 p-4 mt-4 text-xl mx-8">
+              <img class="h-24 w-36" src="{% static 'pictures/delivery.png' %}" />
+              <center><h1 class="pt-2">shipping cost <span class="px-8"> &#x20b9; {{ detail.shipping_cost }}</span></h1></center>
+            </div>
+          </div>
+          <div class="pt-8 flex place-content-center">
+            <div><a  class="text-2xl text-white hover:bg-slate-600 py-4 px-8 mr-24 bg-gray-700 border-black border-4 rounded-2xl font-semibold" href="{% url 'add_to_cart' detail.id %}">Add to Cart</a></div>
+            <div><a href="{% url 'add_to_order' detail.id %}" class="text-2xl text-white hover:bg-slate-600 py-4 px-8 bg-gray-700 border-black border-4 rounded-2xl font-semibold">Order Now</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% if added %}
+    <script>
+        alert("Product added to cart");
+    </script>
+    {% endif %}
+
+    {% if ordered %}
+    <script>
+        alert("Product orderd successfully");
+    </script>
+    {% endif %}
+
+    <script>
+    </script>
+  </body>
+</html>
+
+{% endblock %}

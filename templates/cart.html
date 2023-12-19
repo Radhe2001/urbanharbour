@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="myapp/static/css/style.css" />
+  </head>
+  <body>
+    {% block content %}
+    <div
+      class="pt-32 pb-24 bg-gradient-to-b from-violet-900 to-slate-900 via-cyan-900"
+    >
+      <center>
+        <div>
+          {% for item in obj %}
+          <div
+            class="flex mt-28 mb-8"
+            style="
+              width: 900px;
+              height: 350px;
+              background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0)
+              );
+              backdrop-filter: blur(10px);
+              -wbkit-backdrop-filter: blur(10px);
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.18);
+              box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            "
+          >
+            <div
+              class="rounded-3xl m-8"
+              style="box-shadow: 3px 3px 8px #FBA1B7;
+                background-color: #f0f0f0;
+                padding: 20px;
+                height:280px;width:400px; 
+                background-image: url('{{ item.product_pic.url }}');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div class="p-8">
+              <div class="text-start mb-12">
+                <h1 class="text-3xl text-white font-semibold pb-2">{{ item.description }}</h1>
+                <h1 class="text-xl text-white font-normal">Total :<span class="pr-1 pl-2 text-slate-400">&#x20b9;</span> <span class="text-slate-400">{{ item.discounted_price }}</sapn></h1>
+              </div>
+              <a class="text-2xl font-semibold border-4 border-black rounded-2xl bg-gray-900 py-2 px-4 hover:bg-slate-800 text-cyan-300 hover:text-white" href="{% url 'add_to_order' item.id %}">Place order</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </center>
+    </div>
+
+    {% endblock %}
+    <script>
+      {% comment %} console.log(obj) {% endcomment %}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+    />
+    <title>UrbanHarbour.com</title>
+  </head>
+  <body>
+    {% load static %}
+
+    <nav
+      class="w-full flex p-10 items-center bg-pink-200 fixed"
+      style="box-shadow: 0px 0px 3px; z-index: 3"
+    >
+      <h1
+        class="ml-3 text-5xl font-bold"
+        style="font-family: Audiowide; text-shadow: 5px 5px 10px #637e76"
+      >
+        UrbanHarbor.com
+      </h1>
+
+      <ul class="flex">
+        <li class="pl-7 ml-10 text-2xl">
+          <a class="focus:text-violet-700 home" href="{% url 'index' %}"
+            >Home</a
+          >
+        </li>
+        <li class="pl-7 text-2xl">
+          <a class="focus:text-violet-700 brands" href="{% url 'brand' %}"
+            >Brands</a
+          >
+        </li>
+        <li class="pl-7 text-2xl">
+          <a
+            class="focus:text-violet-700 categories"
+            href="{% url 'category' %}"
+            >Categories</a
+          >
+        </li>
+        <li class="pl-7 text-2xl">
+          <a class="focus:text-violet-700 products" href="{% url 'product' %}"
+            >Products</a
+          >
+        </li>
+        <li class="pl-7 text-2xl">
+          <a class="focus:text-violet-700 offers" href="{% url 'offer' %}"
+            >Offers</a
+          >
+        </li>
+        <li class="pl-7 text-2xl about">
+          <a class="focus:text-violet-700" href="{% url 'about' %}">About us</a>
+        </li>
+      </ul>
+
+      <div class="flex flex-wrap ml-40">
+        <form method="post" action="{% url 'index' %}">
+          {% csrf_token %}
+          <input
+            class="border-4 border-black rounded-xl pl-1 p-1 h-12 w-72 ml-10 search"
+            type="text"
+            name="q"
+            value="{{ query }}"
+            placeholder="Search products..."
+            onkeyup="submitOnEnter(event)"
+          />
+        </form>
+
+        <a href="{% url 'profile' %}" class="h-10 w-10 ml-6">
+          <img src="{% static 'pictures/profile.png' %}" />
+        </a>
+
+        <a href="{% url 'cart' %}" class="h-11 w-11 ml-6">
+          <img src="{% static 'pictures/cart.png' %}" />
+        </a>
+      </div>
+      <div>
+        <a
+          class="p-2 pl-3 pr-3 ml-6 hover:bg-white text-xl font-bold border-2 border-black rounded-2xl login"
+          href="{% url 'login' %}"
+          >Login</a
+        >
+      </div>
+    </nav>
+
+    {% block content %} {% endblock %}
+
+    <div
+      class="flex bg-gradient-to-b from-pink-100 via-blue-200 to-red-200 h-96"
+      style="box-shadow: inset 0px 1px 3px"
+    >
+      <div class="flex grid grid-cols-4 content-between mx-4 pt-4 w-full">
+        <div class="pt-4 pl-24 pr-8">
+          <h1 class="text-3xl p-4"><b>Get support</b></h1>
+          <h4 class="text-lg p-2 pl-6">Help Center</h4>
+          <h4 class="text-lg p-2 pl-6">Live chat</h4>
+          <h4 class="text-lg p-2 pl-6">Check order status</h4>
+          <h4 class="text-lg p-2 pl-6">Refund</h4>
+        </div>
+
+        <div class="pt-4 pl-8 pr-8">
+          <h1 class="text-3xl p-4"><b>Trade Assurance</b></h1>
+          <h4 class="text-lg p-2 pl-6">Safe and easy payments</h4>
+          <h4 class="text-lg p-2 pl-6">Money-back policy</h4>
+          <h4 class="text-lg p-2 pl-6">On-time shipping</h4>
+          <h4 class="text-lg p-2 pl-6">After-sales pretection</h4>
+          <h4 class="text-lg p-2 pl-6">Product monitoring services</h4>
+        </div>
+
+        <div class="pt-4 pl-8 pr-8">
+          <h1 class="text-3xl p-4"><b>Sell to us</b></h1>
+          <h4 class="text-lg p-2 pl-6">start selling</h4>
+          <h4 class="text-lg p-2 pl-6">Become a varified seller</h4>
+          <h4 class="text-lg p-2 pl-6">Partnership</h4>
+        </div>
+
+        <div class="pt-4 pl-8 pr-24">
+          <h1 class="text-3xl p-4"><b>Get to know us</b></h1>
+          <h4 class="text-lg p-2 pl-6">About urbanharbour.com</h4>
+          <h4 class="text-lg p-2 pl-6">Corporate responsibilty</h4>
+          <h4 class="text-lg p-2 pl-6">News center</h4>
+          <h4 class="text-lg p-2 pl-6">Careers</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex bg-red-200 content-center px-40 py-10">
+      <div>
+        <h1 class="text-2xl">
+          ©2023 UrbanHarbor.com All trademarks are owned by Indian Society of
+          E-commerce , IN , or used with permission.
+        </h1>
+      </div>
+      <div class="flex grid grid-cols-5 content-between gap-6 ml-24">
+        <a href="#">
+          <img class="h-10 w-10" src={% static "pictures/fb.png" %}>
+        </a>
+        <a href="#">
+          <img class="h-10 w-10" src={% static "pictures/linkedin.png" %}>
+        </a>
+        <a herf="#">
+          <img class="h-10 w-10" src={% static "pictures/twitter.png" %}>
+        </a>
+        <a href="#">
+          <img class="h-10 w-10" src={% static "pictures/insta.png" %}>
+        </a>
+
+        <a href="#">
+          <img class="h-10 w-10" src={% static "pictures/youtube.png" %}>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      var cookies = document.cookie.split(";");
+      var cookie = cookies[1].trim();
+      if (cookie.indexOf("isLoggedIn" + "=") === 0) {
+        var isLoggedIn = cookie.substring(11, cookie.length);
+      }
+
+      if (isLoggedIn === "yes") {
+        document.querySelector(".login").textContent = "Logout";
+      } else {
+        document.querySelector(".login").textContent = "Login";
+      }
+    </script>
+  </body>
+</html>

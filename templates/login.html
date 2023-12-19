@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="myapp/static/css/style.css" />
+  </head>
+  <body>
+    {% block content %}
+    <div
+      class="pt-32 bg-gradient-to-b from-violet-900 to-slate-900 via-cyan-900"
+      style="height: 940px"
+    >
+      <center>
+        <div
+          class="mt-28"
+          style="
+            height: 600px;
+            width: 700px;
+            background: linear-gradient(
+              135deg,
+              rgba(255, 255, 255, 0.1),
+              rgba(255, 255, 255, 0)
+            );
+            backdrop-filter: blur(10px);
+            -wbkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+          "
+        >
+          <h1 class="text-white text-5xl font-bold m-16">Login Here</h1>
+          <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input
+              type="text"
+              class="p-3 text-2xl m-6 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="email"
+              placeholder="Your Email Address"
+            /><br />
+            <input
+              type="password"
+              class="p-3 text-2xl m-1 text-slate-900 border-2 rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              name="password"
+              placeholder="Your Password"
+            /><br />
+            <input
+              type="submit"
+              class="p-3 text-2xl bg-cyan-800 hover:bg-gray-700 m-6 mt-12 text-white border-2 font-bold text-3xl rounded-xl border-slate-900"
+              style="width: 500px; height: 60px"
+              value="Login"
+            />
+          </form>
+          <a class="text-lg text-purple-400 hover:text-blue-600" href="{% url 'register' %}">Register Yourself</a>
+        </div>
+      </center>
+    </div>
+
+    {% endblock %}
+    <script src="index.js"></script>
+  </body>
+</html>

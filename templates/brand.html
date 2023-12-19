@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-cyan-100">
+    <div class="pt-32">
+      <div class="mx-40 mb-24">
+        <center><h1 class="text-8xl font-bold p-4 py-16 text-gray-800">Brands</h1></center>
+
+        <div class="flex grid grid-cols-3 gap-4">
+          {% for br in brand %}
+          <a href="{% url 'brand_detail' br.id %}">
+            <div class="mr-20 mt-16">
+            <div
+              class="rounded-3xl"
+              style="box-shadow: 10px 10px 8px 10px #FBA1B7,inset 3px 3px 3px #FBA1B7;
+                background-color: #f0f0f0;
+                padding: 20px;
+                height:500px;width:500px;
+                background-image: url('{{ br.brand_pic.url }}');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <center>
+              <h1 class="text-4xl font-semibold py-8">{{ br.name }}</h1>
+            </center>
+          </div>
+          </a>
+          {% endfor %}
+        </div>
+        <hr
+          style="
+            border: none;
+            width: 100%;
+            height: 4px;
+            background-color: #ff6363;
+            margin: 20px 0;
+          "
+        />
+      </div>
+    </div>
+
+    <script>
+
+      document.querySelector('.brands').style.color = "blue";
+
+      {% comment %}
+          
+
+            var arr=[];
+            {% for i in obj %}
+
+              var myObject = "{{ i.image }}";
+              // Access the serialized object in JavaScript
+              arr.push(myObject);
+
+            {% endfor %}
+
+
+            function interval(){
+              let count = 0;
+              const id = setInterval(() => {
+                let img = "images/"+arr[count];
+                document.getElementById("slider-image").src = img;
+                if(count == arr.length-1){
+                  count = 0;
+                }else{
+                  count++;
+                }
+              },3000)
+            }
+
+            const id = setTimeout(()=> {
+              interval();
+            },1000)
+            console.log(arr); {% endcomment %}
+    </script>
+  </body>
+</html>
+
+{% endblock %}
