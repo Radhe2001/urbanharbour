@@ -69,9 +69,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER':'postgres',
-        'PASSWORD':'B55D3B6B5*5eDbf1eg*gb-dB-AAEe1FC',
+        'PASSWORD':'F1bDD2eFc2GeGf4eG64bG4eF5*G1DEC-',
         'HOST':'roundhouse.proxy.rlwy.net',
-        'PORT':'24359',
+        'PORT':'14427',
     }
 }
 
@@ -113,8 +113,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build' 'static')
 
 
 # Default primary key field type
